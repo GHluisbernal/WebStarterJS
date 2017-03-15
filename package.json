@@ -2,7 +2,7 @@
   "name": "web-starter-js",
   "version": "1.0.0",
   "description": "Own workflow for web",
-  "main": "serve.js",
+  "main": "buildScripts/serve.js",
   "author": "Luis",
   "license": "ISC",
   "devDependencies": {

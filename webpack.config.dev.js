@@ -1,14 +1,20 @@
 import path from 'path';
+import htmlWebpackPluging from 'html-webpack-plugin';
 
 module.exports = {
   devtool: 'inline-source-map',
   entry: path.resolve(__dirname, 'app/js/index.js'),
   output: {
     path: path.resolve(__dirname, 'app'),
-    filename: 'bundle.js',
-    publicPath: '/js'
+    filename: 'js/bundle.js',
+    publicPath: ''
   },
-  plugins: [],
+  plugins: [
+    new htmlWebpackPluging({
+      template: path.resolve(__dirname, 'app/index.html'),
+      inject: true
+    })
+  ],
   module: {
     rules: [
       {
@@ -31,8 +37,5 @@ module.exports = {
         loader: ['style-loader', 'css-loader']
       }
     ]
-  },
-  resolve: {
-    extensions: ['.json', '.js', '.jsx', '.css']
   }
 };
